@@ -20,6 +20,10 @@ string password_generator::start_password_generator()
 string password_generator::start_password_generator(const int length, const bool symbols)
 {
 	password_length_ = length;
+	if (password_length_verification() == false)
+	{
+		return "Password length incorrect! Please Try Again!\n";
+	}
 	if (symbols == true)
 	{
 		generate_password_with_symbols();
@@ -39,7 +43,7 @@ void password_generator::set_password_length()
 	do
 	{
 		std::cin >> password_length_;
-		if ((min_password_length_ <= password_length_) && (password_length_ <= max_password_length_))
+		if (min_password_length_ <= password_length_ && password_length_ <= max_password_length_)
 		{
 			end_loop = true;
 		}
@@ -50,6 +54,15 @@ void password_generator::set_password_length()
 			std::cout << "Set password length. MIN password length = 8. MAX password length = 64.\n";
 		}
 	} while (end_loop != true);
+}
+
+bool password_generator::password_length_verification() const
+{
+	if (min_password_length_ <= password_length_ && password_length_ <= max_password_length_)
+	{
+		return true;
+	}
+	return false;
 }
 
 bool password_generator::whether_to_add_symbols()
