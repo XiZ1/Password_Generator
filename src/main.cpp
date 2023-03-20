@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::cout << "Hello world!\n";
+	std::cout << "Hello in Password Generator!\n\n";
 	password_generator pass_gen;
 	std::cout << pass_gen.start_password_generator();
 
