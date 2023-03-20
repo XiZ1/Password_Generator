@@ -17,6 +17,21 @@ string password_generator::start_password_generator()
 	return password_;
 }
 
+string password_generator::start_password_generator(const int length, const bool symbols)
+{
+	password_length_ = length;
+	if (symbols == true)
+	{
+		generate_password_with_symbols();
+	}
+	else
+	{
+		generate_password_without_symbols();
+	}
+
+	return password_;
+}
+
 void password_generator::set_password_length()
 {
 	bool end_loop = false;

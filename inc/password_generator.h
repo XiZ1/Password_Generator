@@ -8,6 +8,7 @@ class password_generator
 {
 public:
 	string start_password_generator();
+	string start_password_generator(const int length, const bool symbols);
 
 private:
 	int password_length_ = 0;
