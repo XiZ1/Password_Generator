@@ -40,24 +40,23 @@ void password_generator::set_password_length()
 bool password_generator::whether_to_add_symbols()
 {
 	std::cout << "Whether add symbols to password?" << "\n" << R"(Press 'y' or 'n')";
-	char choose = ' ';
 	do
 	{
-		std::cin.ignore();
-		choose = static_cast<char>(_getch());
-		if ((choose == 'y') || (choose == 'Y'))
+		// ReSharper disable once CppTooWideScopeInitStatement
+		const int choose = _getch();
+		if (choose == 'y' || choose == 'Y')
 		{
 			return true;
 		}
-		else if ((choose == 'n') || (choose == 'N'))
+		else if (choose == 'n' || choose == 'N')
 		{
 			return false;
 		}
 		else
 		{
 			system("cls");
-			std::cout << "That answer doesn't exist! Please try again.";
-			std::cout << "Whether add symbols to password?" << "\n" << R"(Press 'y' or 'n')";
+			std::cout << "That answer doesn't exist! Please try again.\n";
+			std::cout << "Whether add symbols to password?" << R"(Press 'y' or 'n')";
 		}
 	} while (true);
 }
