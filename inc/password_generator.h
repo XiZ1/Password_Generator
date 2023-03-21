@@ -1,3 +1,5 @@
+// ReSharper disable CppConstParameterInDeclaration
+// ReSharper disable StringLiteralTypo
 #pragma once
 
 #include <iostream>
@@ -19,8 +21,8 @@ private:
 	string password_;
 
 	void set_password_length();
+	// ReSharper disable once CommentTypo
 	bool password_length_verification() const;  // NOLINT(modernize-use-nodiscard)
 	static bool whether_to_add_symbols();
-	void generate_password_with_symbols();
-	void generate_password_without_symbols();
+	void generate_password(const int symbols);
 };
