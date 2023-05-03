@@ -1,3 +1,7 @@
+/*
+ *	Copyright (C) 2023 Jakub Gorecki - All Rights Reserved.
+ */
+
 // ReSharper disable CppClangTidyConcurrencyMtUnsafe
 // ReSharper disable CppInitializedValueIsAlwaysRewritten
 #include "password_generator.h"

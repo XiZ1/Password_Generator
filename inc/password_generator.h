@@ -1,3 +1,7 @@
+/*
+ *	Copyright (C) 2023 Jakub Gorecki - All Rights Reserved.
+ */
+
 // ReSharper disable CppConstParameterInDeclaration
 // ReSharper disable StringLiteralTypo
 #pragma once
