@@ -4,6 +4,7 @@
 
 // ReSharper disable CppClangTidyConcurrencyMtUnsafe
 // ReSharper disable CppInitializedValueIsAlwaysRewritten
+
 #include "password_generator.h"
 #include <cstdlib>
 #include <conio.h>
@@ -80,7 +81,6 @@ bool password_generator::whether_to_add_symbols()
 	std::cout << "Whether add symbols to password?" << "\n" << R"(Press 'y' or 'n')";
 	do
 	{
-		// ReSharper disable once CppTooWideScopeInitStatement
 		const int choose = _getch();
 		if (choose == 'y' || choose == 'Y')
 		{
@@ -103,8 +103,7 @@ bool password_generator::whether_to_add_symbols()
 
 void password_generator::generate_password(const int symbols)
 {
-	// ReSharper disable once CppZeroConstantCanBeReplacedWithNullptr
-	srand(time(NULL));  // NOLINT(clang-diagnostic-shorten-64-to-32, cert-msc51-cpp)
+	srand(time(NULL));
 	int drawn_number_of_table = 0;
 	int drawn_number_of_char = 0;
 	for (int i = 0; i < password_length_; i++)
